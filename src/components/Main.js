@@ -188,6 +188,7 @@ export default function Main() {
             <p key={index}>{error}</p>
           ))}
           </div>
+          // should work on the casse when the error showed then the result should not be shown
       <div className="resultContainer"> {setErrors != null && result && result.length > 0 ? (
     result.map((Result, index) => (
       <p key={index}>{Result}</p>
