@@ -193,3 +193,175 @@ input[type="radio"] {
     transform: translateY(0);
   }
 }
+
+
+
+
+/* General layout adjustment for small screens */
+@media (max-width: 768px) {
+  .flex {
+    width: 90%; /* Adjust width for mobile screens */
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  #calculate-form {
+    width: 90%; /* Reduce form width for smaller screens */
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  input,
+  select {
+    font-size: 14px; /* Adjust input font size */
+    padding: 8px;
+    height: 35px; /* Adjust height for mobile */
+    border-radius: 8px;
+  }
+
+  .gender-container {
+    padding: 8px; /* Adjust padding for gender container */
+  }
+
+  label {
+    font-size: 14px; /* Smaller label text */
+    margin-bottom: 5px;
+  }
+
+  button {
+    font-size: 14px; /* Reduce button font size */
+    padding: 0.6em 1.2em;
+  }
+
+  #modal-content {
+    width: 100%; /* Modal should take full width on mobile */
+  }
+
+  .modal-box {
+    padding: 20px; /* Reduce padding in modal box */
+    max-width: 300px; /* Smaller max-width for mobile */
+  }
+
+  .modal-title {
+    font-size: 20px; /* Adjust modal title font size */
+  }
+
+  .modal-body p {
+    font-size: 14px; /* Smaller text for modal body */
+  }
+}
+
+/* Modal background overlay remains the same */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box styling */
+.modal-box {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Modal title styling */
+.modal-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Modal body text */
+.modal-body p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 8px 0;
+  padding: 0;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button hover effect remains unchanged */
+button::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+button::before {
+  top: -1em;
+  left: -1em;
+}
+
+button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+button:hover {
+  color: rgb(10, 25, 30);
+}
+
+button:active {
+  filter: brightness(0.8);
+}
+
+input:not([type="radio"]) {
+  margin-left: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 190px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+
+input:not([type="radio"]):hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  color: #fff;
+  transition: 0.5s;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+}
